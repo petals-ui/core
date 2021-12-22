@@ -11,7 +11,7 @@ class FormFieldStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new FormFieldHeadlessComponent(props));
+    this.setComponents({ headless: new FormFieldHeadlessComponent(props) });
   }
 }
 

@@ -4,6 +4,7 @@ import {
 } from 'petals-ui/dist/button';
 
 import { BaseStructuralComponent } from '../basic';
+import style from './style.scss';
 
 class ButtonStructuralComponent extends BaseStructuralComponent<
   ButtonHeadlessComponent,
@@ -11,7 +12,7 @@ class ButtonStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new ButtonHeadlessComponent(props));
+    this.setComponents({ headless: new ButtonHeadlessComponent(props), style });
   }
 }
 

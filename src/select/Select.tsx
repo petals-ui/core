@@ -11,7 +11,7 @@ class SelectStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new SelectHeadlessComponent(props));
+    this.setComponents({ headless: new SelectHeadlessComponent(props) });
   }
 }
 

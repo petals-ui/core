@@ -11,7 +11,7 @@ class DataTableStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new DataTableHeadlessComponent(props));
+    this.setComponents({ headless: new DataTableHeadlessComponent(props) });
   }
 }
 

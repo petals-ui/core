@@ -11,7 +11,7 @@ class SelectOptionStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new SelectOptionHeadlessComponent(props));
+    this.setComponents({ headless: new SelectOptionHeadlessComponent(props) });
   }
 }
 

@@ -11,7 +11,7 @@ class TextInputStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new TextInputHeadlessComponent(props));
+    this.setComponents({ headless: new TextInputHeadlessComponent(props) });
   }
 }
 

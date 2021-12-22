@@ -4,6 +4,7 @@ import {
 } from 'petals-ui/dist/layout';
 
 import { BaseStructuralComponent } from '../basic';
+import style from './style.scss';
 
 class LayoutAsideStructuralComponent extends BaseStructuralComponent<
   LayoutAsideHeadlessComponent,
@@ -11,7 +12,10 @@ class LayoutAsideStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setHeadlessComponent(new LayoutAsideHeadlessComponent(props));
+    this.setComponents({
+      headless: new LayoutAsideHeadlessComponent(props),
+      style,
+    });
   }
 }
 
