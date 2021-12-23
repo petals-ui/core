@@ -13,7 +13,10 @@ class BaseStructuralComponent<
   HeadlessComponent = BaseHeadlessComponent,
   ComponentProps = IBaseComponent<ComponentTag>,
   ComponentState extends Record<string, any> = {}
-> extends Component<ComponentProps & IBaseComponent, ComponentState> {
+> extends Component<
+  Partial<ComponentProps & IBaseComponent<ComponentTag>>,
+  ComponentState
+> {
   private __hc!: HeadlessComponent;
 
   private __style!: Record<string, string>;
