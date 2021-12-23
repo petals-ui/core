@@ -4,6 +4,7 @@ import {
 } from 'petals-ui/dist/data-table';
 
 import { BaseStructuralComponent } from '../basic';
+import style from './style.scss';
 
 class DataTableStructuralComponent extends BaseStructuralComponent<
   DataTableHeadlessComponent,
@@ -11,7 +12,10 @@ class DataTableStructuralComponent extends BaseStructuralComponent<
 > {
   constructor(props) {
     super(props);
-    this.setComponents({ headless: new DataTableHeadlessComponent(props) });
+    this.setComponents({
+      headless: new DataTableHeadlessComponent(props),
+      style,
+    });
   }
 }
 
