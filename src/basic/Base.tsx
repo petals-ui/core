@@ -12,9 +12,10 @@ import { ComponentTag } from './typing';
 class BaseStructuralComponent<
   HeadlessComponent = BaseHeadlessComponent,
   ComponentProps = IBaseComponent<ComponentTag>,
-  ComponentState extends Record<string, any> = {}
+  ComponentState extends Record<string, any> = {},
+  ComponentTheme extends string = string
 > extends Component<
-  Partial<ComponentProps & IBaseComponent<ComponentTag>>,
+  Partial<IBaseComponent<ComponentTag, ComponentTheme> & ComponentProps>,
   ComponentState
 > {
   private __hc!: HeadlessComponent;
@@ -56,6 +57,7 @@ class BaseStructuralComponent<
       ...(this.__hc as any)
         .getClassNames()
         .map((cls: string) => this.getStyleClassName(cls)),
+      this.props.theme ? this.getModifierClassName(this.props.theme) : '',
       ...(this.__hc as any).getExtraClassNames(),
     ]
       .filter((cls) => !!cls)

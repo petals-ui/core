@@ -14,3 +14,4 @@ export { getComponentName };
 export * from '@ntks/toolbox';
 
 export * from './dom';
+export * from './component';
