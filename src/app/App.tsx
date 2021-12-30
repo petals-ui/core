@@ -25,7 +25,7 @@ class AppStructuralComponent
 
   constructor(props) {
     super(props);
-    this.setComponents({ headless: new AppHeadlessComponent(this), style });
+    this.setComponents({ headless: new AppHeadlessComponent(props), style });
   }
 
   public componentDidMount(): void {
