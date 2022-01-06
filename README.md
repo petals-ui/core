@@ -1,3 +1,3 @@
-# @zora/core
+# @zoras/core
 
 Basic structural components for React.
