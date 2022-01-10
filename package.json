@@ -1,6 +1,6 @@
 {
   "name": "@zoras/core",
-  "version": "0.0.18",
+  "version": "0.0.0",
   "description": "Basic structural components for React",
   "files": [
     "dist"
@@ -33,7 +33,7 @@
     "release": "npm publish --access=public"
   },
   "dependencies": {
-    "petals-ui": "0.0.17",
+    "petals-ui": "0.0.18",
     "throttle-debounce": "^3.0.1"
   },
   "peerDependencies": {
@@ -42,12 +42,17 @@
   },
   "devDependencies": {
     "@ntks/eslint-config": "0.0.0",
+    "@ntks/stylelint-config": "0.0.5",
     "@types/node": "^13.11.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "eslint": "^7.21.0",
+    "eslint-plugin-react": "^7.27.1",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.0",
+    "stylelint": "^13.12.0",
     "typescript": "^4.1.3"
   }
 }

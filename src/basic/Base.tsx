@@ -57,7 +57,7 @@ class BaseStructuralComponent<
       ...(this.__hc as any)
         .getClassNames()
         .map((cls: string) => this.getStyleClassName(cls)),
-      this.props.theme ? this.getModifierClassName(this.props.theme) : '',
+      this.props.theme ? this.getModifierClassName(this.props.theme as string) : '',
       ...(this.__hc as any).getExtraClassNames(),
     ]
       .filter((cls) => !!cls)
