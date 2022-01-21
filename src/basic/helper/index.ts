@@ -1,3 +1,5 @@
+import { isBoolean } from '@ntks/toolbox';
+
 function convertToCamelCase(kebabCase: string): string {
   return kebabCase
     .split('-')
@@ -5,11 +7,15 @@ function convertToCamelCase(kebabCase: string): string {
     .join('');
 }
 
+function resolveBooleanPropValue(propValue: boolean | undefined, defaultValue: boolean): boolean {
+  return isBoolean(propValue) ? propValue! : defaultValue;
+}
+
 function getComponentName(moduleName: string, prefix: string = 'Zora'): string {
   return `${prefix}${convertToCamelCase(moduleName)}`;
 }
 
-export { getComponentName };
+export { resolveBooleanPropValue, getComponentName };
 
 export * from '@ntks/toolbox';
 
