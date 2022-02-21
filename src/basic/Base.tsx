@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { CSSProperties, Component } from 'react';
 
 import {
   StateClassNamePrefix,
@@ -15,7 +15,9 @@ class BaseStructuralComponent<
   ComponentState extends Record<string, any> = {},
   ComponentTheme extends string = string
 > extends Component<
-  Partial<IBaseComponent<ComponentTag, ComponentTheme> & ComponentProps>,
+  Partial<
+    IBaseComponent<ComponentTag, CSSProperties, ComponentTheme> & ComponentProps
+  >,
   ComponentState
 > {
   private __hc!: HeadlessComponent;
@@ -57,7 +59,9 @@ class BaseStructuralComponent<
       ...(this.__hc as any)
         .getClassNames()
         .map((cls: string) => this.getStyleClassName(cls)),
-      this.props.theme ? this.getModifierClassName(this.props.theme as string) : '',
+      this.props.theme
+        ? this.getModifierClassName(this.props.theme as string)
+        : '',
       ...(this.__hc as any).getExtraClassNames(),
     ]
       .filter((cls) => !!cls)
