@@ -21,10 +21,7 @@
     "paths": {}
   },
   "include": [
-    "mock/**/*",
-    "src/**/*",
-    "config/**/*",
-    ".umirc.ts",
+    "packages/*/src",
     "typings.d.ts",
     "external"
   ],

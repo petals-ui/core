@@ -1,8 +1,7 @@
 {
-  "name": "@zoras/monorepo",
-  "version": "0.0.0",
+  "name": "@zoras/core",
+  "version": "0.0.9",
   "description": "Basic structural components for React",
-  "private": true,
   "files": [
     "dist"
   ],
@@ -33,22 +32,12 @@
     "prerelease": "npm run build",
     "release": "npm publish --access=public"
   },
-  "devDependencies": {
-    "@ntks/eslint-config": "0.0.0",
-    "@ntks/stylelint-config": "0.0.5",
-    "@types/node": "^13.11.1",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "antd": "~4.18.2",
-    "eslint": "^7.21.0",
-    "eslint-plugin-react": "^7.27.1",
+  "dependencies": {
     "petals-ui": "0.0.25",
-    "prettier": "^2.2.1",
+    "throttle-debounce": "^3.0.1"
+  },
+  "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "rimraf": "^3.0.0",
-    "stylelint": "^13.12.0",
-    "throttle-debounce": "^3.0.1",
-    "typescript": "^4.1.3"
+    "react-dom": "^17.0.2"
   }
 }

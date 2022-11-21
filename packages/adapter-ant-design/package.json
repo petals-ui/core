@@ -1,0 +1,48 @@
+{
+  "name": "@zoras/adapter-ant-design",
+  "version": "0.0.9",
+  "description": "Adapter for Ant Design",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "zora",
+    "petals",
+    "petals-ui",
+    "ui",
+    "components",
+    "front-end",
+    "frontend",
+    "react",
+    "reactjs",
+    "react.js",
+    "antd",
+    "ant-design"
+  ],
+  "author": "Ourai Lin <ourairyu@gmail.com> (https://ourai.ws/)",
+  "license": "MIT",
+  "homepage": "https://petals.fxxk.design",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zora-ui/adapter-ant-design.git"
+  },
+  "scripts": {
+    "precopy": "rm -rf dist",
+    "copy": "mkdir dist && cp -R src/* dist",
+    "prebuild": "npm run copy",
+    "build": "tsc && rm -rf dist/shims-*.d.ts",
+    "prerelease": "npm run build",
+    "release": "npm publish --access=public"
+  },
+  "dependencies": {
+    "@zoras/core": "0.0.9"
+  },
+  "peerDependencies": {
+    "antd": "~4.18.2",
+    "react": "~17.0.2",
+    "react-dom": "~17.0.2"
+  }
+}
