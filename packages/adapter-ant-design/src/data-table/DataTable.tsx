@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { isNumeric } from '@zoras/core/dist/basic';
 import { DataTableStructuralComponent } from '@zoras/core/dist/data-table';
@@ -23,10 +23,12 @@ class DataTable extends DataTableStructuralComponent {
           pageSizeOptions: this.props.pageSizes,
           total: this.props.total,
           onChange: (page: number, pageSize: number) => {
-            if (page !== this.props.currentPage) {
-              this.props.onCurrentChange && this.props.onCurrentChange(page);
-            } else if (pageSize !== this.props.pageSize) {
-              this.props.onSizeChange && this.props.onSizeChange(pageSize);
+            if (this.props.onCurrentChange && page !== this.props.currentPage) {
+              this.props.onCurrentChange(page);
+            }
+
+            if (this.props.onSizeChange && pageSize !== this.props.pageSize) {
+              this.props.onSizeChange(pageSize);
             }
           },
         }
@@ -35,10 +37,7 @@ class DataTable extends DataTableStructuralComponent {
 
   private resolveProps(): TableProps<Record<string, any>> {
     const props: TableProps<Record<string, any>> = {
-      className: [
-        this.getDescendantClassName('table'),
-        style['ZoraDataTable-table'],
-      ].join(' '),
+      className: [this.getDescendantClassName('table'), style['ZoraDataTable-table']].join(' '),
       dataSource: this.props.dataSource,
       pagination: this.resolvePagination(),
       loading: this.props.loading,
@@ -65,15 +64,14 @@ class DataTable extends DataTableStructuralComponent {
 
     let rowSelection = null as any;
 
-    (this.props.columns || []).forEach((col) => {
+    (this.props.columns || []).forEach(col => {
       if (col.type === 'selection') {
         rowSelection = {
           type: 'checkbox',
           columnWidth: normalizeWidth(col.width!),
           fixed: col.fixed,
           onChange: (_, selection: Record<string, any>[]) =>
-            this.props.onSelectionChange &&
-            this.props.onSelectionChange([...selection]),
+            this.props.onSelectionChange && this.props.onSelectionChange([...selection]),
         };
       } else {
         columns.push({

@@ -1,11 +1,7 @@
 {
   "name": "@zoras/monorepo",
   "version": "0.0.0",
-  "description": "Basic structural components for React",
-  "private": true,
-  "files": [
-    "dist"
-  ],
+  "description": "React components based on Petals",
   "keywords": [
     "zora",
     "petals",
@@ -18,20 +14,15 @@
     "reactjs",
     "react.js"
   ],
+  "private": true,
+  "scripts": {
+    "build": "node ./scripts/bin build",
+    "release": "node ./scripts/bin release"
+  },
   "author": "Ourai Lin <ourairyu@gmail.com> (https://ourai.ws/)",
   "license": "MIT",
-  "homepage": "https://petals.fxxk.design",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zora-ui/core.git"
-  },
-  "scripts": {
-    "precopy": "rm -rf dist",
-    "copy": "mkdir dist && cp -R src/* dist",
-    "prebuild": "npm run copy",
-    "build": "tsc && rm -rf dist/shims-*.d.ts",
-    "prerelease": "npm run build",
-    "release": "npm publish --access=public"
+  "engines": {
+    "node": ">=14.15.3"
   },
   "devDependencies": {
     "@ntks/eslint-config": "0.0.0",
@@ -39,6 +30,7 @@
     "@types/node": "^13.11.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@zoras/core": "0.0.9",
     "antd": "~4.18.2",
     "eslint": "^7.21.0",
     "eslint-plugin-react": "^7.27.1",

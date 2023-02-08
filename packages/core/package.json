@@ -22,7 +22,8 @@
   "homepage": "https://petals.fxxk.design",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zora-ui/core.git"
+    "url": "git+https://github.com/zora-ui/zora.git",
+    "directory": "packages/core"
   },
   "scripts": {
     "precopy": "rm -rf dist",

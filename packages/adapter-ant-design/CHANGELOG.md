@@ -1,5 +1,11 @@
 # 更新日志
 
+## 0.0.10 (2023-02-08)
+
+### 缺陷/优化
+
+- 修复 `DataTable` 在 `currentPage` 与 `pageSize` 同时改变时只触发了 `onCurrentChange`。
+
 ## 0.0.9 (2022-08-12)
 
 ### 特性

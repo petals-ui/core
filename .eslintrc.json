@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["@ntks/eslint-config", "plugin:react/recommended"],
+  "extends": ["@ntks/eslint-config", "plugin:react/recommended", "plugin:react/jsx-runtime"],
   "plugins": ["react"],
   "parserOptions": {
     "ecmaFeatures": {
